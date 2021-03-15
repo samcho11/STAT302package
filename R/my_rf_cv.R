@@ -1,0 +1,35 @@
+my_rf_cv <- function(k) {
+  library(randomForest)
+  library(tidyverse)
+  # Define folds
+  fold <- sample(rep(1:k, length = nrow(penguins)))
+  split_data <- data.frame(penguins, "split" = fold)
+  split_data <- na.omit(split_data)
+
+  mse <- rep(NA, 5)
+  for (i in 1:k) {
+    # Use k-fold to assign training and test data
+
+    #data_train <- split_data %>% filter(fold != i)
+    #data_train <- subset(data_train, select = -fold)
+
+    #data_test <- split_data %>% filter(fold == i)
+    #data_test <- subset(data_test, select = -fold)
+
+    data_train <- split_data %>% filter(split != i)
+    data_test <- split_data %>% filter(split == i)
+
+    # Train a random forest model with 100 trees to predict body mass
+    rf_model <- randomForest(body_mass_g ~ bill_length_mm + bill_depth_mm +
+                               flipper_length_mm, data = data_train, ntree = 100)
+    # Predict the body mass
+    pred <- predict(rf_model, data_test[, -1])
+
+    # Calculate the MSE, the average squared difference between prediction and actual value
+    mse[i] <- mean((pred - data_test$body_mass_g)^2)
+  }
+
+  # Calculate the mean MSE
+  avg_mse <- mean(mse)
+  return(avg_mse)
+}

@@ -23,6 +23,11 @@ devtools::install_github("samcho11/STAT302package")
 library(STAT302package)
 ```
 
+```{r}
+# A tutorial for my_t.test
+
+```
+
 ```{r setup}
 library(STAT302package)
 ```
