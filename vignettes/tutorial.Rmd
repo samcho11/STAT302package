@@ -1,0 +1,20 @@
+---
+title: "Project 3: Package Tutorial"
+author: "Sam Cho"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Project 3: Package Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(STAT302package)
+```
