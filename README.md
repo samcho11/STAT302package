@@ -2,6 +2,8 @@
 # STAT302package
 
 <!-- badges: start -->
+use_github_actions()
+use_github_actions_badge(name = "R-CMD-check", repo_spec = NULL)
 [![codecov](https://codecov.io/gh/samcho11/STAT302package/branch/main/graph/badge.svg?token=JRCCNB5P20)](https://codecov.io/gh/samcho11/STAT302package)
 <!-- badges: end -->
 

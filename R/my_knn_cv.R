@@ -16,10 +16,14 @@
 #'         proportion of observations that were classified incorrectly.
 #'
 #' @examples
-#' library(palmerpenguins)
+#' penguins <- STAT302package::my_penguins
 #' penguins2 <- penguins %>% drop_na()
 #' my_cl <- penguins2 %>% pull(species)
 #' result_nn1 <- my_knn_cv(penguins2[, 3:6], my_cl, 1, 5)
+#'
+#' @importFrom stats model.frame model.matrix model.response na.omit predict pt sd
+#' @importFrom dplyr filter
+#' @importFrom class knn
 #'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv) {

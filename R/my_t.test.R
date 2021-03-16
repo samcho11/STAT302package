@@ -19,6 +19,8 @@
 #' x <- rnorm(10, mean = 0, sd = 1)
 #' my_t.test(x, alternative = "two.sided", mu = 0)
 #'
+#' @importFrom stats model.frame model.matrix model.response na.omit predict pt sd
+#'
 #' @export
 my_t.test <- function(x,
                       alternative = "two.sided",

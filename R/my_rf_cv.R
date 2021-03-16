@@ -12,10 +12,13 @@
 #' @examples
 #' my_rf_cv(5)
 #'
+#' @importFrom stats model.frame model.matrix model.response na.omit predict pt sd
+#' @importFrom dplyr filter
+#' @importFrom class knn
+#' @importFrom randomForest randomForest
+#'
 #' @export
 my_rf_cv <- function(k) {
-  library(randomForest)
-  library(tidyverse)
   # Define folds
   fold <- sample(rep(1:k, length = nrow(penguins)))
   split_data <- data.frame(penguins, "split" = fold)
