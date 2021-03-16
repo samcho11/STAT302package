@@ -1,3 +1,25 @@
+#' T-test
+#'
+#' This function performs t-test for given value.
+#'
+#' @param x A numeric vector of data
+#' @param alternative A character string specifying the alternative hypothesis.
+#'                    This should only accept "two.sided", "less", or "greater".
+#'                    Otherwise, your function should throw an informative error.
+#' @param mu A number indicating the null hypothesis value of the mean.
+#'
+#' @keywords inference
+#'
+#' @return A list consisting following elements:
+#'         \code{test_stat} : The numeric test statistics
+#'         \code{df} : The degree of freedom
+#'         \code{alternative} : The value of parameter \code{alternative}
+#'         \code{p_val} : The numeric p value
+#' @examples
+#' x <- rnorm(10, mean = 0, sd = 1)
+#' my_t.test(x, alternative = "two.sided", mu = 0)
+#'
+#' @export
 my_t.test <- function(x,
                       alternative = "two.sided",
                       mu = 0) {

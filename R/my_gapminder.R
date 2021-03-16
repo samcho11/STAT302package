@@ -1,3 +1,9 @@
+#' Gapminder
+#'
+#' An excerpt of the data available at Gapminder.org.
+#' For each of 142 countries, the package provides values for life expectancy,
+#' GDP per capita, and population, every five years, from 1952 to 2007.
+#'
 #' @source \url{http://www.gapminder.org/data/}
 #' @seealso \code{\link[gapminder]{country_colors}} for a nice color scheme for the countries
 #' @importFrom tibble tibble

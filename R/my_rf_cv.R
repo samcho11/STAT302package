@@ -1,3 +1,18 @@
+#' Random Forest Cross-Validation
+#'
+#' This function splits the data into k groups for evaluating test set and
+#' training sets to predict the best value by random forest algorithm
+#'
+#' @param k Number of folds
+#'
+#' @keywords prediction
+#'
+#' @return Average mean squared error across all \code{k} folds.
+#'
+#' @examples
+#' my_rf_cv(5)
+#'
+#' @export
 my_rf_cv <- function(k) {
   library(randomForest)
   library(tidyverse)

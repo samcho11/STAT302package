@@ -24,8 +24,12 @@ library(STAT302package)
 ```
 
 ```{r}
-# A tutorial for my_t.test
-
+# A tutorial of my_t.test
+#library(STAT302package)
+#x <- my_gapminder$lifeExp
+#t_gapminder_twosided <- my_t.test(x, two.sided, 60)
+#t_gapminder_twosided <- my_t.test(x, less, 60)
+#t_gapminder_twosided <- my_t.test(x, greater, 60)
 ```
 
 ```{r setup}

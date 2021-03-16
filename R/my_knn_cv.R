@@ -1,3 +1,27 @@
+#' k-Nearest Neighbors Cross-Validation
+#'
+#' This function splits the data into k groups for evaluating test set and
+#' training sets to predict the best value referring the neighbors.
+#'
+#' @param train Input data frame.
+#' @param cl True class value of your training data.
+#' @param k_nn Integer representing the number of neighbors.
+#' @param k_cv Integer representing the number of folds.
+#'
+#' @keywords prediction
+#'
+#' @return A list consists of a vector \code{class} comprised of prediction made
+#'         by \code{knn()} function from class package, and misclassification
+#'         rate \code{cv_err}, a value between 0 and 1 representing the
+#'         proportion of observations that were classified incorrectly.
+#'
+#' @examples
+#' library(palmerpenguins)
+#' penguins2 <- penguins %>% drop_na()
+#' my_cl <- penguins2 %>% pull(species)
+#' result_nn1 <- my_knn_cv(penguins2[, 3:6], my_cl, 1, 5)
+#'
+#' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv) {
   # Split data in k_cv parts, randomly
   k <- k_cv
