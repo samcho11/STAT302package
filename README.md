@@ -2,6 +2,7 @@
 # STAT302package
 
 <!-- badges: start -->
+[![codecov](https://codecov.io/gh/samcho11/STAT302package/branch/main/graph/badge.svg?token=JRCCNB5P20)](https://codecov.io/gh/samcho11/STAT302package)
 <!-- badges: end -->
 
 This package demonstrates package building. It contains power function, 
