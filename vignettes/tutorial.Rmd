@@ -15,23 +15,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, eval = FALSE}
-# Brief introductions on how to install the package
-# STAT302package is linked in samcho11 git repository to the public
-# You may install the package via github by following code
-devtools::install_github("samcho11/STAT302package")
-library(STAT302package)
-```
-
-```{r}
-# A tutorial of my_t.test
-#library(STAT302package)
-#x <- my_gapminder$lifeExp
-#t_gapminder_twosided <- my_t.test(x, two.sided, 60)
-#t_gapminder_twosided <- my_t.test(x, less, 60)
-#t_gapminder_twosided <- my_t.test(x, greater, 60)
-```
-
 ```{r setup}
 library(STAT302package)
 ```

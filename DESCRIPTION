@@ -7,7 +7,10 @@ Authors@R:
            role = c("aut", "cre"),
            email = "cjww0p@uw.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package demonstrates package building.
+Description: This package demonstrates package building. It contains power function, 
+             farenheit to celcius converting function, t test, linear model function, 
+             k-nearest neighbor cross validation, and random forest cross validation
+             function.
 License: GPL ( >= 3)
 Encoding: UTF-8
 LazyData: true

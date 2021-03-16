@@ -4,22 +4,19 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of STAT302package is to ...
+This package demonstrates package building. It contains power function, 
+fahrenheit to celsius converting function, t test, linear model function, 
+k-nearest neighbor cross validation, and random forest cross validation
+function.
 
 ## Installation
 
-You can install the released version of STAT302package from [CRAN](https://CRAN.R-project.org) with:
+STAT302package is linked in samcho11 git repository to the public. You may install
+the package via github by following code
 
-``` r
-install.packages("STAT302package")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
+```{r, eval = FALSE}
+devtools::install_github("samcho11/STAT302package")
 library(STAT302package)
-## basic example code
 ```
+
 
