@@ -15,15 +15,16 @@
 #'         rate \code{cv_err}, a value between 0 and 1 representing the
 #'         proportion of observations that were classified incorrectly.
 #'
+#' @importFrom stats model.frame model.matrix model.response na.omit predict pt sd
+#' @importFrom dplyr filter select pull
+#' @importFrom class knn
+#'
 #' @examples
 #' penguins <- STAT302package::my_penguins
-#' penguins2 <- penguins %>% drop_na()
-#' my_cl <- penguins2 %>% pull(species)
+#' penguins2 <- na.omit(penguins)
+#' my_cl <- penguins2 %>% dplyr::pull(species)
 #' result_nn1 <- my_knn_cv(penguins2[, 3:6], my_cl, 1, 5)
 #'
-#' @importFrom stats model.frame model.matrix model.response na.omit predict pt sd
-#' @importFrom dplyr filter
-#' @importFrom class knn
 #'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv) {
@@ -42,17 +43,17 @@ my_knn_cv <- function(train, cl, k_nn, k_cv) {
   # Iterate through k_cv times
   for (i in 1:k) {
     # Assign training and test variable
-    data_train <- split_data %>% filter(split != i)
-    data_train <- data_train %>% select(-split)
+    data_train <- split_data %>% dplyr::filter(split != i)
+    data_train <- data_train %>% dplyr::select(-split)
 
-    data_test <- split_data %>% filter(split == i)
-    data_test <- data_test %>% select(-split)
+    data_test <- split_data %>% dplyr::filter(split == i)
+    data_test <- data_test %>% dplyr::select(-split)
 
-    class_train <- split_class %>% filter(split != i)
-    class_train <- class_train %>% select(-split)
+    class_train <- split_class %>% dplyr::filter(split != i)
+    class_train <- class_train %>% dplyr::select(-split)
 
-    class_test <- split_class %>% filter(split == i)
-    class_test <- class_test %>% select(-split)
+    class_test <- split_class %>% dplyr::filter(split == i)
+    class_test <- class_test %>% dplyr::select(-split)
 
     result <- knn(data_train, data_test, class_train[, 1], k_nn)
     cv_err[i] <- mean(result != class_test[, 1])

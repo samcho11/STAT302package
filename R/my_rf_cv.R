@@ -9,17 +9,19 @@
 #'
 #' @return Average mean squared error across all \code{k} folds.
 #'
-#' @examples
-#' my_rf_cv(5)
-#'
 #' @importFrom stats model.frame model.matrix model.response na.omit predict pt sd
 #' @importFrom dplyr filter
 #' @importFrom class knn
 #' @importFrom randomForest randomForest
 #'
+#' @examples
+#' my_rf_cv(5)
+#'
+#'
 #' @export
 my_rf_cv <- function(k) {
   # Define folds
+  penguins <- STAT302package::my_penguins
   fold <- sample(rep(1:k, length = nrow(penguins)))
   split_data <- data.frame(penguins, "split" = fold)
   split_data <- na.omit(split_data)

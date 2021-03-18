@@ -11,6 +11,7 @@
 #'         \code{Estimate}, \code{Std. Error}, \code{t value}, and
 #'         \code{Pr(|t|)}.
 #'
+#'
 #' @examples
 #' data(mtcars)
 #' test_my_lm <- my_lm(mpg ~ hp + wt, data = mtcars)
@@ -48,13 +49,9 @@ my_lm <- function(formula, data) {
   p_val <- pt(abs(t_val), df, lower.tail = FALSE ) * 2
 
   # Organize the data into table
-  library(data.table)
-  result <- data.table(
-    "Estimate" = beta_est,
-    "Std. Error" = se,
-    "t value" = t_val,
-    "Pr(>|t|)" = p_val
-  )
-
+  result <- table("Estimate" = beta_est,
+                  "Std. Error" = se,
+                  "t value" = t_val,
+                  "Pr(>|t|)" = p_val)
   return(result)
 }

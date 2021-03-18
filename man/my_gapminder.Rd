@@ -19,6 +19,7 @@ For each of 142 countries, the package provides values for life expectancy,
 GDP per capita, and population, every five years, from 1952 to 2007.
 }
 \examples{
+gapminder <- STAT302package::my_gapminder
 str(gapminder)
 head(gapminder)
 summary(gapminder)

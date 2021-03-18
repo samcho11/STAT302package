@@ -20,7 +20,9 @@ Imports:
     dplyr,
     class,
     randomForest,
-    tibble
+    tibble,
+    palmerpenguins,
+    ggplot2
 Suggests: 
     testthat (>= 3.0.0),
     knitr,

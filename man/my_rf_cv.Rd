@@ -19,5 +19,6 @@ training sets to predict the best value by random forest algorithm
 \examples{
 my_rf_cv(5)
 
+
 }
 \keyword{prediction}

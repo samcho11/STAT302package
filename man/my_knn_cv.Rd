@@ -27,9 +27,10 @@ training sets to predict the best value referring the neighbors.
 }
 \examples{
 penguins <- STAT302package::my_penguins
-penguins2 <- penguins \%>\% drop_na()
-my_cl <- penguins2 \%>\% pull(species)
+penguins2 <- na.omit(penguins)
+my_cl <- penguins2 \%>\% dplyr::pull(species)
 result_nn1 <- my_knn_cv(penguins2[, 3:6], my_cl, 1, 5)
+
 
 }
 \keyword{prediction}
